@@ -80,14 +80,9 @@ And public attribution of xiaomi platforms(like venus and so and)
 };
 
 &qupv3_se19_spi {
-	status = "ok";
+	status = "disabled";
 	stmvl53l5@0 {
-		compatible = "st,stmvl53l5";
-		reg = <0>;
-		_1P8_power-supply = <&L8C>;
-		_3P0_power-supply = <&L7C>;
-		spi-max-frequency = <8000000>;
-		status = "ok";
+		status = "disabled";
 	};
 };
 
@@ -184,82 +179,13 @@ And public attribution of xiaomi platforms(like venus and so and)
 };
 
 &qupv3_se4_i2c {
-	status = "ok";
+	status = "disabled";
 	bt541_ts_device@20 {
-		status = "ok";
-		compatible = "zinitix,bt541_ts_device";
-		reg = <0x20>;
-		interrupt-parent = <&tlmm>;
-		interrupts = <31 0x2008>;
-		avdd-supply = <&L3C>;
-		vdd-supply = <&touch_vdd_vreg>;
-		/* pins used by touchscreen */
-		pinctrl-names = "pmx_ts_active","pmx_ts_suspend","pmx_ts_release";
-		pinctrl-0 = <&mini_ts_active>;
-		pinctrl-1 = <&mini_ts_suspend>;
-		pinctrl-2 = <&mini_ts_release>;
-		zinitix,reset-gpio = <&tlmm 125 0x0>;
-		zinitix,irq-gpio = <&tlmm 31 0x2008>;
-		zinitix,x_resolution = <1080>;
-		zinitix,y_resolution = <1920>;
-		zinitix,page_size = <128>;
-		zinitix,orientation = <0>;
-		zinitix,tsp_vdd_supply_type = <1>;
-		zinitix,pname = "SM-G5308W";
+		status = "disabled";
 	};
 
 	tsc@24 {
-		status = "ok";
-		compatible = "cy,cyttsp5_i2c_adapter";
-		reg = <0x24>;
-		interrupt-parent = <&tlmm>;
-		interrupts = <31 0x2008>;
-		cy,adapter_id = "cyttsp5_i2c_adapter";
-		pinctrl-names = "pmx_ts_active", "pmx_ts_suspend";
-		pinctrl-0 = <&mini_ts_active>;
-		pinctrl-1 = <&mini_ts_suspend>;
-		vdd-supply = <&touch_vdd_vreg>;
-		avdd-supply = <&L3C>;
-
-		cy,core {
-			cy,name = "cyttsp5_core";
-			cy,irq_gpio = <&tlmm 31 0x2008>;
-			cy,rst_gpio = <&tlmm 125 0x0>;
-			cy,hid_desc_register = <1>;
-			/*CY_CORE_FLAG_RESTORE_PARAMETERS */
-			cy,flags = <4>;
-			/* CY_CORE_EWG_NONE */
-			cy,easy_wakeup_gesture = <0>;
-
-			cy,mt {
-				cy,name = "cyttsp5_mt";
-
-				cy,inp_dev_name = "cyttsp5_mt";
-				cy,flags = <0x0>;
-				cy,abs =
-					/* ABS_MT_POSITION_X, CY_ABS_MIN_X, CY_ABS_MAX_X, 0, 0 */
-					<0x35 0 126 0 0
-					/* ABS_MT_POSITION_Y, CY_ABS_MIN_Y, CY_ABS_MAX_Y, 0, 0 */
-					0x36 0 294 0 0
-					/* ABS_MT_PRESSURE, CY_ABS_MIN_P, CY_ABS_MAX_P, 0, 0 */
-					0x3a 0 255 0 0
-					/* CY_IGNORE_VALUE, CY_ABS_MIN_W, CY_ABS_MAX_W, 0, 0 */
-					0xffff 0 255 0 0
-					/* ABS_MT_TRACKING_ID, CY_ABS_MIN_T, CY_ABS_MAX_T, 0, 0 */
-					0x39 0 15 0 0
-					/* ABS_MT_TOUCH_MAJOR, 0, 255, 0, 0 */
-					0x30 0 255 0 0
-					/* ABS_MT_TOUCH_MINOR, 0, 255, 0, 0 */
-					0x31 0 255 0 0
-					/* ABS_MT_ORIENTATION, -127, 127, 0, 0 */
-					0x34 0xffffff81 127 0 0
-					/* ABS_MT_TOOL_TYPE, 0, MT_TOOL_MAX, 0, 0 */
-					0x37 0 1 0 0
-					/* ABS_MT_DISTANCE, 0, 255, 0, 0 */
-					0x3b 0 255 0 0>;
-			};
-
-		};
+		status = "disabled";
 	};
 };
 
@@ -518,6 +444,7 @@ And public attribution of xiaomi platforms(like venus and so and)
 	sec-vddio-supply = <&L12C>;
 	sec-vdd-supply = <&display_sec_cvo>;
 	avdd-supply = <&display_sec_vddi>;
+	status = "disabled";
 };
 
 &dsi_prim_sim_vid {
@@ -588,7 +515,7 @@ And public attribution of xiaomi platforms(like venus and so and)
 
 &mdss_mdp {
 	connectors = <&smmu_sde_unsec &smmu_sde_sec &sde_wb &sde_dsi
-		&sde_dsi1 &sde_rscc>;
+		&sde_rscc>;
 };
 
 &pm8350b_gpios {
