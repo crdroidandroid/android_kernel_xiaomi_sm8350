@@ -384,6 +384,7 @@ And public attribution of xiaomi platforms(like venus and so and)
 		cirrus,boost-ind-nanohenry = <1000>;
 		cirrus,boost-cap-microfarad = <15>;
 		cirrus,asp-sdout-hiz = <3>;
+		cirrus,is-mars-pa = <1>;
 		sound-name-prefix = "RCV";
 		cirrus,gpio-config2 {
 			cirrus,gpio-src-select = <0x4>;
@@ -401,6 +402,7 @@ And public attribution of xiaomi platforms(like venus and so and)
 		cirrus,boost-ind-nanohenry = <1000>;
 		cirrus,boost-cap-microfarad = <15>;
 		cirrus,asp-sdout-hiz = <3>;
+		cirrus,is-mars-pa = <1>;
 		cirrus,right-channel-amp;
 		cirrus,gpio-config2 {
 			cirrus,gpio-src-select = <0x4>;
