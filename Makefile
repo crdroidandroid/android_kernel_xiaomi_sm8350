@@ -185,11 +185,6 @@ PHONY += $(MAKECMDGOALS) sub-make
 $(filter-out _all sub-make $(lastword $(MAKEFILE_LIST)), $(MAKECMDGOALS)) _all: sub-make
 	@:
 
-# Invoke a second make in the output directory, passing relevant variables
-sub-make:
-	$(Q)$(MAKE) -C $(abs_objtree) -f $(abs_srctree)/Makefile $(MAKECMDGOALS)
-
-endif # need-sub-make
 endif # sub_make_done
 
 # We process the rest of the Makefile if this is the final invocation of make
