@@ -115,7 +115,7 @@ static struct attribute_group mm_attr_group = {
 
 static struct kobject *mm_sysfs_kobj;
 
-int mmhardware_initialize_sysfs(void)
+static int __init mmhardware_initialize_sysfs(void)
 {
 	int err;
 	/* create mm_hardware under /sys */
@@ -137,7 +137,7 @@ int mmhardware_initialize_sysfs(void)
 	return 0;
 }
 
-void mmhardware_cleanup_sysfs(void)
+static void __exit mmhardware_cleanup_sysfs(void)
 {
 	kobject_put(mm_sysfs_kobj);
 }
