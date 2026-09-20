@@ -52,8 +52,6 @@ struct mm_info {
 #define MM_INFO(_id, _mm_name)      \
 	struct mm_info _mm_name##_info = __MMHW(_id, _mm_name)
 
-int mmhardware_initialize_sysfs(void);
-void mmhardware_cleanup_sysfs(void);
 int register_kobj_under_mmsysfs(enum hardware_id mm_id, const char *name);
 int on_calibration_under_mmsysfs(enum hardware_id mm_id, const char *name);
 #endif
